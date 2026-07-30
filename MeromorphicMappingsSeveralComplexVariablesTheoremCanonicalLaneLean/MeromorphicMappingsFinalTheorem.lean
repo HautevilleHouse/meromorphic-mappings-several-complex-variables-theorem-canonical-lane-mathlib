@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import MeromorphicMappingsSeveralComplexVariablesTheoremCanonicalLaneLean.MeromorphicMappingsBridgeLemmas
+import MeromorphicMappingsSeveralComplexVariablesTheoremCanonicalLaneLean.MeromorphicMappingsGateLemmas
+
+namespace HautevilleHouse
+namespace MeromorphicMappingsSeveralComplexVariablesTheoremCanonicalLaneLean
+
+def ConstrainedMeromorphicMappingsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_meromorphic_mappings_endgame (A : AdmissibleClass) :
+    ConstrainedMeromorphicMappingsClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end MeromorphicMappingsSeveralComplexVariablesTheoremCanonicalLaneLean
+end HautevilleHouse
